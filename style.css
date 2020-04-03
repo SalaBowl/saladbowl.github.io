@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Megrim', ;
+}
+body {background-color: #fffffb;}
+h1 {font-family: 'Noto Sans JP', sans-serif;}
+p, span {font-family: 'Noto Sans JP', sans-serif; font-weight: 300;}
+h2 {font-family:'Megrim'; text-align: center;}
+
+#head {
+  position: relative;
+  background-color: #fceeeb;
+  width: 200px;
+  height: 100vh;
+  text-align: center;
+  animation-name: headmove;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  position: fixed;
+}
+#head a {
+	font-family: 'Megrim', cursive;
+  text-decoration: none;
+  color: #7a7c7d;
+}
+#head .myname {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform : translateX(-50%);
+  transform : translateX(-50%);
+	font-size: 2em;
+  animation-name: sitetitle;
+  animation-duration: 5s;
+}
+#head #menu{
+}
+#head ul {
+  font-size: 1.2em;
+  list-style: none;
+  position: absolute;
+  bottom: 30px;
+  animation-name: liopacity;
+  animation-duration: 5s;
+}
+#head li {
+  text-align: center;
+  margin: 5px 50px;
+  width: 100px;
+}
+
+@keyframes headmove{
+  0% {width: 100%; height: 100vh;}
+  20% {width: 100%; height: 100vh;}
+  100% {width: 200px; height: 100vh;}
+}
+@keyframes sitetitle {
+  0% {position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform : translate(-50%,-50%);
+      transform : translate(-50%,-50%);
+    }
+  20% {position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform : translate(-50%,-50%);
+      transform : translate(-50%,-50%);
+    }
+  100% {position: absolute;
+        top: 20%;
+        left: 50%;
+        -webkit-transform : translateX(-50%);
+        transform : translateX(-50%);
+    }
+}
+@keyframes liopacity {
+  0% {opacity: 0; display: none;}
+  80% {opacity: 0; display: none;}
+  100% {opacity: 1;}
+}
+
+@keyframes scroll {
+  0% {overflow: hidden;}
+  100% {overflow: scroll;}
+}
+
+.block, #footer {width: auto; margin-left: 200px; padding: 10px;}
+
+#head li:hover {border-bottom: solid 2px #e98f93;}
+#about .sns {font-size: 1.5em; }
+#about .myimg {text-align: center;}
+#about img {width: 100px; height: auto;}
+
+#sns .snsicon {text-align: center; display: flex; flex-wrap: wrap;}
+#sns .snsbutton {margin-bottom: 10px; margin-left: auto;; margin-right: auto; padding: 10px 10px 7px 10px; border-radius: 4px; width: 40%;}
+#sns .snsbutton span {display:block;}
+#sns .snsbutton a {text-decoration: none; display: inline-block;}
+#sns .snsbutton .username {color: #fff; font-size: 1.5em;}
+#sns .other {color: #efefef; font-size: 0.9em;}
+#sns .twitter {background: #1da1f2;}
+#sns .youtube {background: #FF0000;}
+#sns .mirrativ {background: linear-gradient(45deg, #29CCB1, #15BDCC); }
+#sns .twitter:before {content:""; display:inline-block; width:3em; height:3em;
+  background:url(ico/Twitter.png) no-repeat; background-size:contain;}
+#sns .youtube:before {content:""; display:inline-block; width:3em; height:3em;
+  background:url(ico/Youtube.png) no-repeat; background-size:contain;}
+#sns .mirrativ:before {content:""; display:inline-block; width:3em; height:3em;
+  background:url(ico/Mirrativ2.png) no-repeat; background-size:contain;}
+
+#contact form {padding: 0 10px; text-align: center;}
+#contact form label {font-family: 'Megrim';}
+#contact input {height: 30px; width: 600px; border-radius: 10px; background-color: #fffffb;}
+#contact textarea {height: 100px; width: 600px; border-radius: 10px; background-color: #fffffb;}
+#contact .formmes {font-weight: 300; font-size: 0.5; color: #626262;}
+
+#footer {background-color: #eeeeea;}
+#footer ul {text-align: center;}
+#footer .snsIcoTwi::before {content:""; display:inline-block; width:2em; height:2em;
+  background:url(ico/Twitter.PNG) no-repeat; background-size:contain;}
+#footer .snsIcoYou::before {content:""; display:inline-block; width:2em; height:2em;
+  background:url(ico/Youtube.png) no-repeat; background-size:contain;}
+#footer .snsIcoMir::before {content:""; display:inline-block; width:2em; height:2em;
+  background:url(ico/Mirrativ.PNG) no-repeat; background-size:contain;}
+
+@media screen and (max-width:480px) {
+  .space {height: 3em; width: auto; background-color: #ffffff;}
+  #head {
+    text-align: center;
+    animation-name: sheadmove;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  #head .myname {
+  	font-size: 1.9em;
+    animation-name: ssitetitle;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding-left: 20px;
+  }
+  #head ul {display: none;}
+  @keyframes sheadmove{
+    0% {width: 100vw; height: 100vh;}
+    20% {width: 100vw; height: 100vh;}
+    100% {width: 100vw; height: 3em;}
+  }
+  @keyframes ssitetitle {
+    0% {position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+      }
+    20% {position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+      }
+    100% {position: absolute;
+          top: 20%;
+          left: 10%;
+          -webkit-transform : translateX(-20%);
+          transform : translateX(-20%);
+      }
+  }
+  .block {width: auto; margin: 10px;}
+  #footer {margin-left: 0;}
+}
+
+@media (max-width: 830px) {
+  #sns .snsicon {display: inline;}
+  #sns .snsbutton {width: auto;}
+  #contact input {height: 30px; width: 100%; border-radius: 10px; background-color: #fffffb;}
+  #contact textarea {height: 100px; width: 100%; border-radius: 10px; background-color: #fffffb;}
+}
+
+/* ########### 1040px以上 ########### */
+@media (min-width: 1300px) {
+
+/* ボックスの左右に確保する余白 */
+#header, #about, #sns, #contact, #footer{width: 1065px;
+	margin-left: 200px;
+	margin-right: auto;}
+}
