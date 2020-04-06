@@ -171,7 +171,7 @@ h2 {font-family:'Megrim'; text-align: center;}
   #footer {margin-left: 0;}
 }
 
-@media (max-width: 830px) {
+@media (max-width: 850px) {
   #sns .snsicon {display: inline;}
   #sns .snsbutton {width: auto;}
   #contact input {height: 30px; width: 100%; border-radius: 10px; background-color: #fffffb;}
