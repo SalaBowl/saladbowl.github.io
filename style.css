@@ -109,6 +109,16 @@ h2 {font-family:'Megrim'; text-align: center;}
 #sns .mirrativ:before {content:""; display:inline-block; width:3em; height:3em;
   background:url(ico/Mirrativ2.png) no-repeat; background-size:contain;}
 
+#blog .newblog {margin-bottom: 20px}
+#blog .newblog a	{display: block; border: solid 1px #dddddd; color: #000000; text-decoration: none}
+#blog .newblog a:hover	{box-shadow: 0 0 10px #dddddd}
+#blog .newblog img	{width: 100%; height: auto; border: none; margin-bottom: 15px; vertical-align: bottom}
+#blog .newblog h1	{margin-top: 0; margin-bottom: 5px; margin-left: 15px; margin-right: 15px; font-size: 22px}
+#blog .newblog p	{margin-top: 0; margin-bottom: 15px; margin-left: 15px; margin-right: 15px; font-size: 14px}
+
+#blog .newblog .more	{display: inline-block; padding: 5px 15px; background-color: #3077be; color: #ffffff}
+#blog .newblog  .more i	{margin-left: 10px}
+
 #contact form {padding: 0 10px; text-align: center;}
 #contact form label {font-family: 'Megrim';}
 #contact input {height: 30px; width: 600px; border-radius: 10px; background-color: #fffffb;}
@@ -124,9 +134,11 @@ h2 {font-family:'Megrim'; text-align: center;}
 #footer .snsIcoMir::before {content:""; display:inline-block; width:2em; height:2em;
   background:url(ico/Mirrativ.PNG) no-repeat; background-size:contain;}
 
+
 @media screen and (max-width:480px) {
   .space {height: 3em; width: auto; background-color: #ffffff;}
   #head {
+    top: 0;
     text-align: center;
     animation-name: sheadmove;
     animation-duration: 5s;
@@ -178,11 +190,19 @@ h2 {font-family:'Megrim'; text-align: center;}
   #contact textarea {height: 100px; width: 100%; border-radius: 10px; background-color: #fffffb;}
 }
 
-/* ########### 1040px以上 ########### */
-@media (min-width: 1300px) {
+@media (min-width: 500px) {
+  #top {display: none;}
+}
 
-/* ボックスの左右に確保する余白 */
-#header, #about, #sns, #contact, #footer{width: 1065px;
-	margin-left: 200px;
+@media (min-width: 850px) {
+  #top {display: none;}
+  #bloglist {display: flex;}
+  #bloglist .newblog {width: 49%; margin: auto;}
+}
+
+@media (min-width: 1300px) {
+.space {height: 100vh; width: 200px; background-color: #fff; float: left;}
+#header, #about, #sns,#blog, #contact, #footer{width: 1065px;
+	margin-left: auto;
 	margin-right: auto;}
 }
