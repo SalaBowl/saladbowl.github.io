@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <style media="screen">
+      textarea {}
+    </style>
+    <h1>喋るん</h1>
+    <textarea name="textarea" id="note"></textarea><br>
+    <button onclick="test()">再生</button><br>
+    <p>Speed:<input type="number" id="speed" value="1">0.1~10で設定できます(1が基準値)</p>
+    <p>Pitch:<input type="number" id="pitch" value="1">0~2で設定できます(1が基準値)</p>
+    <p>Volume:<input type="number" id="volume" value="1">0~1で設定できます(1が基準値)</p>
+    <script>
+      function test() {
+        const text = document.getElementById("note").value;
+        const uttr = new SpeechSynthesisUtterance(`${text}`);
+        uttr.rate = document.getElementById("speed").value;
+        uttr.pitch = document.getElementById("pitch").value;
+        uttr.volume = document.getElementById("volume").value;
+        speechSynthesis.speak(uttr);
+      }
+    </script>
+  </body>
+</html>
