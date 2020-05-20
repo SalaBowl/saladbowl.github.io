@@ -12,36 +12,61 @@
   </head>
   <body>
     <style media="screen">
-    body {background-color: #cae3bf;}
+      body {background-color: #cae3bf;}
       header {width: 100%; height: auto; background-color: #a7d28d;}
-      h1 { font-family: "Nico Moji"; color: #fefefe; text-align: center; font-size: 2.5em;}
-      textarea {width: 80%; height: 50vh; border: 2px solid #fff;; border-radius: 10px; margin-top: 10px; margin-left: 10%; margin-right: 10%; padding: 6px;}
-      p {font-family: 'M PLUS Rounded 1c', sans-serif;}
-      .player {width: auto; height: 100px; margin-left: auto; margin-right: auto;}
+      p, button, h1 {
+        font-family: "Nico Moji";
+        margin: 1px;
+        font-size: 1.3em;
+      }
+      h1 {color: #fefefe; text-align: center; font-size: 2.5em;}
+      textarea {width: 80%; height: 50vh;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        border: 2px solid #fff; border-radius: 10px;
+        margin-top: 10px; margin-left: 10%; margin-right: 10%;
+        padding: 6px;}
+      main{text-align: center;}
+      .player {width: 100%; height: 100px; margin: 0 auto;}
       .player button img {width: 100px; height: 100px; margin: 5px;}
+      button {width: auto; height: auto; padding: 2px;}
+      input[type="range"] {width: 200px;}
+      #reset_button {background-color: #9dc04c; color: #fff; padding: 10px; border-radius: 20px;}
     </style>
     <header>
       <h1>しゃべるん</h1>
     </header>
-    <textarea name="textarea" id="note"></textarea>
-    <div class="player">
-      <button onclick="play()"><img src="play.PNG" alt=""></button>
-      <button onclick="cancel()"><img src="stop.PNG" alt=""></button>
-      <button onclick="puse()"><img src="puse.PNG" alt=""></button>
-    </div>
-    <form name="setting">
-      <p>Speed:<input type="range" id="speed" min="0" max="10" step="0.1" value="1"
-        oninput="document.getElementById('output1').value=this.value">
-        <output class="numberoutput" id="output1">1</output></p>
-      <p>Pitch:<input type="range" id="pitch" min="0.1" max="2" step="0.1" value="1"
-        oninput="document.getElementById('output2').value=this.value">
-        <output class="numberoutput" id="output2">1</output></p>
-      <p>Volume:<input type="range" id="volume" min="0" max="1" step="0.1" value="1"
-        oninput="document.getElementById('output3').value=this.value">
-        <output class="numberoutput" id="output3">1</output></p>
-    </form>
-    <button type="button" onclick="reset()">リセット</button>
+    <main>
+      <textarea name="textarea" id="note"></textarea>
+      <div class="player">
+        <button onclick="play()" id="play"><img src="play.PNG" alt=""></button>
+        <button onclick="cancel()" id="cancel"><img src="stop.PNG" alt=""></button>
+        <button onclick="puse()" id="puse"><img src="puse.PNG" alt=""></button>
+      </div>
+      <form name="setting">
+        <p>Speed : <input type="range" id="speed" min="0" max="10" step="0.1" value="1"
+          oninput="document.getElementById('output1').value=this.value">
+          <output class="numberoutput" id="output1">1</output></p>
+        <p>Pitch : <input type="range" id="pitch" min="0.1" max="2" step="0.1" value="1"
+          oninput="document.getElementById('output2').value=this.value">
+          <output class="numberoutput" id="output2">1</output></p>
+        <p>Volume : <input type="range" id="volume" min="0" max="1" step="0.1" value="1"
+          oninput="document.getElementById('output3').value=this.value">
+          <output class="numberoutput" id="output3">1</output></p>
+      </form>
+      <button type="button" onclick="reset()" id="reset_button">リセット</button>
+    </main>
+    <script src="http://www.openjs.com/scripts/events/keyboard_shortcuts/shortcut.js"></script>
     <script>
+      document.body.addEventListener('keydown',
+        event => {
+          if (event.key === 'p' && event.ctrlKey) {
+             document.getElementById('play').click();
+          } else if (event.key === 'c' && event.ctrlKey) {
+            document.getElementById('cancel').click();
+          } else if (event.key === 's' && event.ctrlKey) {
+            document.getElementById('puse').click();
+          }
+        });
       function play() {
         const text = document.getElementById("note").value;
         const uttr = new SpeechSynthesisUtterance(`${text}`);
