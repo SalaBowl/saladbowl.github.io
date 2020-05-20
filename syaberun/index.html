@@ -6,25 +6,69 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
     <style media="screen">
-      textarea {}
+    body {background-color: #cae3bf;}
+      header {width: 100%; height: auto; background-color: #a7d28d;}
+      h1 { font-family: "Nico Moji"; color: #fefefe; text-align: center; font-size: 2.5em;}
+      textarea {width: 80%; height: 50vh; border: 2px solid #fff;; border-radius: 10px; margin-top: 10px; margin-left: 10%; margin-right: 10%; padding: 6px;}
+      p {font-family: 'M PLUS Rounded 1c', sans-serif;}
+      .player {width: auto; height: 100px; margin-left: auto; margin-right: auto;}
+      .player button img {width: 100px; height: 100px; margin: 5px;}
     </style>
-    <h1>喋るん</h1>
-    <textarea name="textarea" id="note"></textarea><br>
-    <button onclick="test()">再生</button><br>
-    <p>Speed:<input type="number" id="speed" value="1">0.1~10で設定できます(1が基準値)</p>
-    <p>Pitch:<input type="number" id="pitch" value="1">0~2で設定できます(1が基準値)</p>
-    <p>Volume:<input type="number" id="volume" value="1">0~1で設定できます(1が基準値)</p>
+    <header>
+      <h1>しゃべるん</h1>
+    </header>
+    <textarea name="textarea" id="note"></textarea>
+    <div class="player">
+      <button onclick="play()"><img src="play.PNG" alt=""></button>
+      <button onclick="cancel()"><img src="stop.PNG" alt=""></button>
+      <button onclick="puse()"><img src="puse.PNG" alt=""></button>
+    </div>
+    <form name="setting">
+      <p>Speed:<input type="range" id="speed" min="0" max="10" step="0.1" value="1"
+        oninput="document.getElementById('output1').value=this.value">
+        <output class="numberoutput" id="output1">1</output></p>
+      <p>Pitch:<input type="range" id="pitch" min="0.1" max="2" step="0.1" value="1"
+        oninput="document.getElementById('output2').value=this.value">
+        <output class="numberoutput" id="output2">1</output></p>
+      <p>Volume:<input type="range" id="volume" min="0" max="1" step="0.1" value="1"
+        oninput="document.getElementById('output3').value=this.value">
+        <output class="numberoutput" id="output3">1</output></p>
+    </form>
+    <button type="button" onclick="reset()">リセット</button>
     <script>
-      function test() {
+      function play() {
         const text = document.getElementById("note").value;
         const uttr = new SpeechSynthesisUtterance(`${text}`);
         uttr.rate = document.getElementById("speed").value;
         uttr.pitch = document.getElementById("pitch").value;
         uttr.volume = document.getElementById("volume").value;
-        speechSynthesis.speak(uttr);
+        if (speechSynthesis.paused == true) {
+          speechSynthesis.resume()
+        } else {
+          speechSynthesis.speak(uttr);
+        }
+
+      }
+      function cancel() {
+        speechSynthesis.cancel()
+      }
+      function puse() {
+        speechSynthesis.pause()
+      }
+      function reset() {
+      	document.setting.reset();
+        const number1 = document.getElementById('output1');
+        const number2 = document.getElementById('output2');
+        const number3 = document.getElementById('output3');
+        number1.textContent="1";
+        number2.textContent="1";
+        number3.textContent="1";
       }
     </script>
   </body>
