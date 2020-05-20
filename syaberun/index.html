@@ -38,6 +38,7 @@
       button {width: auto; height: auto; padding: 2px;}
       input[type="range"] {width: 200px;}
       #reset_button {background-color: #9dc04c; color: #fff; padding: 10px; border-radius: 20px;}
+      footer p {font-size: 0.9em; text-align: center; margin: 20px;}
     </style>
     <header>
       <h1>しゃべるん</h1>
@@ -62,7 +63,18 @@
       </form>
       <button type="button" onclick="reset()" id="reset_button">リセット</button>
     </main>
-    <script src="http://www.openjs.com/scripts/events/keyboard_shortcuts/shortcut.js"></script>
+    <footer>
+      <p>Copyright © saladbowl. All Rights Reserved.</p>
+    </footer>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163146016-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163146016-1');
+    </script>
     <script>
       document.body.addEventListener('keydown',
         event => {
