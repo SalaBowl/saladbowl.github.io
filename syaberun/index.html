@@ -110,7 +110,7 @@
         }
         return null;
     }
-    var text = document.getElementById("note").value;
+
       document.body.addEventListener('keydown',
         event => {
           if (event.key === 'p' && event.ctrlKey) {
@@ -122,6 +122,7 @@
           }
         });
       function play() {
+        const text = document.getElementById("note").value;
         const speaker = new SpeechSynthesisUtterance(`${text}`);
         speaker.rate = document.getElementById("speed").value;
         speaker.pitch = document.getElementById("pitch").value;
