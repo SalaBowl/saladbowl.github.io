@@ -37,7 +37,7 @@
       .player button img {width: 100px; height: 100px; margin: 5px;}
       button {width: auto; height: auto; padding: 2px;}
       input[type="range"] {width: 200px;}
-      #reset_button {background-color: #9dc04c; color: #fff; padding: 10px; border-radius: 20px;}
+      #reset_button, #urlmake_button, #copy_button {background-color: #9dc04c; color: #fff; height: 2em; padding: 10px; border-radius: 2em;}
       footer p {font-size: 0.9em; text-align: center; margin: 20px;}
     </style>
     <header>
@@ -62,6 +62,8 @@
           <output class="numberoutput" id="output3">1</output></p>
       </form>
       <button type="button" onclick="reset()" id="reset_button">リセット</button>
+      <button type="button" onclick="urlMake()" id="urlmake_button">シェアようURLをつくる</button>
+      <p id="copy_all" style="display: none;">URL:<span id="outputurl"></span><button type="button" onclick="copyUrl()" id="copy_button">コピー</button></p>
     </main>
     <footer>
       <p>Copyright © saladbowl. All Rights Reserved.</p>
@@ -76,6 +78,39 @@
       gtag('config', 'UA-163146016-1');
     </script>
     <script>
+    window.onload = function onLoad() {
+        param = urlGet();
+        target = document.getElementById("param");
+        document.getElementById("note").value = param["c"];
+        document.getElementById("speed").value = param["s"];
+        document.getElementById("pitch").value = param["p"];
+        document.getElementById("volume").value = param["v"];
+    }
+
+    function urlGet() {
+        if (1 < document.location.search.length) {
+            // 最初の1文字 (?記号) を除いた文字列を取得する
+            var query = document.location.search.substring(1);
+
+            // クエリの区切り記号 (&) で文字列を配列に分割する
+            var parameters = query.split('&');
+
+            var result = new Object();
+            for (var i = 0; i < parameters.length; i++) {
+                // パラメータ名とパラメータ値に分割する
+                var element = parameters[i].split('=');
+
+                var paramName = decodeURIComponent(element[0]);
+                var paramValue = decodeURIComponent(element[1]);
+
+                // パラメータ名をキーとして連想配列に追加する
+                result[paramName] = decodeURIComponent(paramValue);
+            }
+            return result;
+        }
+        return null;
+    }
+    var text = document.getElementById("note").value;
       document.body.addEventListener('keydown',
         event => {
           if (event.key === 'p' && event.ctrlKey) {
@@ -87,15 +122,14 @@
           }
         });
       function play() {
-        const text = document.getElementById("note").value;
-        const uttr = new SpeechSynthesisUtterance(`${text}`);
-        uttr.rate = document.getElementById("speed").value;
-        uttr.pitch = document.getElementById("pitch").value;
-        uttr.volume = document.getElementById("volume").value;
+        const speaker = new SpeechSynthesisUtterance(`${text}`);
+        speaker.rate = document.getElementById("speed").value;
+        speaker.pitch = document.getElementById("pitch").value;
+        speaker.volume = document.getElementById("volume").value;
         if (speechSynthesis.paused == true) {
           speechSynthesis.resume()
         } else {
-          speechSynthesis.speak(uttr);
+          speechSynthesis.speak(speaker);
         }
 
       }
@@ -113,6 +147,24 @@
         number1.textContent="1";
         number2.textContent="1";
         number3.textContent="1";
+      }
+      function urlMake() {
+        const comment = document.getElementById("note").value;
+        const speed = document.getElementById("speed").value;
+        const pitch = document.getElementById("pitch").value;
+        const vol = document.getElementById("volume").value;
+        document.getElementById("outputurl").innerHTML = `https://sarakun.netlify.app/syaberun/index.html?c=${comment}&s=${speed}&p=${pitch}&v=${vol}`;
+        document.getElementById('copy_all').style.display = "block";
+      }
+      function copyUrl() {
+        var text = document.getElementById("outputurl").innerText;
+        var area = document.createElement("textarea");
+        area.textContent = text;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        document.body.removeChild(area);
+        alert('コピーしました');
       }
     </script>
   </body>
