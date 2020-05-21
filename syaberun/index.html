@@ -81,7 +81,8 @@
     window.onload = function onLoad() {
         param = urlGet();
         target = document.getElementById("param");
-        document.getElementById("note").value = param["c"];
+        const text_d = param["c"];
+        document.getElementById("note").value = decodeURI(text_d);
         document.getElementById("speed").value = param["s"];
         document.getElementById("pitch").value = param["p"];
         document.getElementById("volume").value = param["v"];
@@ -150,11 +151,12 @@
         number3.textContent="1";
       }
       function urlMake() {
-        const comment = document.getElementById("note").value;
+        const comment_s = document.getElementById("note").value;
+        const comment_e = encodeURI(comment_s);
         const speed = document.getElementById("speed").value;
         const pitch = document.getElementById("pitch").value;
         const vol = document.getElementById("volume").value;
-        document.getElementById("outputurl").innerHTML = `https://sarakun.netlify.app/syaberun/index.html?c=${comment}&s=${speed}&p=${pitch}&v=${vol}`;
+        document.getElementById("outputurl").innerHTML = `https://sarakun.netlify.app/syaberun/index.html?c=${comment_e}&s=${speed}&p=${pitch}&v=${vol}`;
         document.getElementById('copy_all').style.display = "block";
       }
       function copyUrl() {
