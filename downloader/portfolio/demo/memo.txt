@@ -1,0 +1,21 @@
+顔の画像の出典(加工元)
+https://www.humaaans.com
+fontawesome
+https://fontawesome.com
+  twitter icon
+  https://fontawesome.com/icons/twitter
+  facebook icon
+  https://fontawesome.com/icons/facebook
+  youtube icon
+  https://fontawesome.com/icons/youtube?style=brands
+
+icon使用規約
+twitter
+https://about.twitter.com/content/dam/about-twitter/company/brand-resources/en_us/Twitter_Brand_Guidelines_JP.pdf
+facebook
+https://ja.facebookbrand.com/facebookapp/assets/%e3%80%8cf%e3%80%8d%e3%83%ad%e3%82%b4/
+YouTube
+https://www.youtube.com/intl/ja/about/brand-resources/#logos-icons-colors
+
+googlefonts
+https://fonts.google.com

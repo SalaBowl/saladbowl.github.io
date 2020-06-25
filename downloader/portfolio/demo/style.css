@@ -1,0 +1,69 @@
+*{margin: 0; padding: 0;}
+
+h1, h2, p, a {font-family: 'Noto Sans JP', sans-serif;}
+
+main {padding: 10px; background-color: #fcefe6;}
+section {width: 80%; margin: 0 auto;}
+h2 {text-align: center;}
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: #f9e0cf;
+}
+header p {
+  padding: 5px 10px;
+  font-size: 1.5em;
+}
+
+.myname {font-size: 2em;}
+.wrap {display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 3px;
+}
+#profile div p {margin-left: 5px;}
+#sns {
+  width: 100%;
+  text-align: center;
+}
+
+.fab {text-decoration: none; margin: 5px; font-size: 1.5em;}
+.fa-twitter {color: #1DA1F2;}
+.fa-facebook {color: #1877f2;}
+.fa-youtube {color: #ff0000;}
+
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  background-color: #fcefe6;
+  border: solid 1px #888;
+  border-radius: 10px;
+}
+textarea {
+  resize: vertical;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #f9e0cf;
+}
+footer p {
+  padding: 5px 10px;
+}
+
+@media screen and (max-width:780px) {
+  .wrap {display: block; text-align: center;}
+}
+
+@media screen and (min-width:760px) {
+  header p, h1, section, footer p {max-width: 760px; margin: 0 auto;}
+}
