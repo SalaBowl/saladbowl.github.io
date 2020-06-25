@@ -93,21 +93,17 @@ h2 {font-family:'Megrim'; text-align: center;}
 #about .myimg {text-align: center;}
 #about img {width: 100px; height: auto;}
 
-#sns .snsicon {text-align: center; display: flex; flex-wrap: wrap;}
-#sns .snsbutton {margin-bottom: 10px; margin-left: auto;; margin-right: auto; padding: 10px 10px 7px 10px; border-radius: 4px; width: 40%;}
-#sns .snsbutton span {display:block;}
-#sns .snsbutton a {text-decoration: none; display: inline-block;}
-#sns .snsbutton .username {color: #fff; font-size: 1.5em;}
-#sns .other {color: #efefef; font-size: 0.9em;}
-#sns .twitter {background: #1da1f2;}
-#sns .youtube {background: #FF0000;}
-#sns .mirrativ {background: linear-gradient(45deg, #29CCB1, #15BDCC); }
-#sns .twitter:before {content:""; display:inline-block; width:3em; height:3em;
-  background:url(ico/Twitter.png) no-repeat; background-size:contain;}
-#sns .youtube:before {content:""; display:inline-block; width:3em; height:3em;
-  background:url(ico/Youtube.png) no-repeat; background-size:contain;}
-#sns .mirrativ:before {content:""; display:inline-block; width:3em; height:3em;
-  background:url(ico/Mirrativ2.png) no-repeat; background-size:contain;}
+.sns {display: flex; display: -webkit-flex; flex-wrap: wrap;}
+.snsbutton {border-radius: 6px; height: 2em; width: 45%; padding-left: 5px; margin: 2px;}
+.snsbutton a {text-decoration: none; color: #fff; font-size: 1.5em; font-weight: 400;}
+.twitter {background: #1da1f2;}
+.youtube {background: #FF0000;}
+.mirrativ {background: linear-gradient(45deg, #29CCB1, #15BDCC); }
+.hp {background: #c8e5e8;}
+@media screen and (max-width:768px) {
+ .sns {display: block;}
+ .snsbutton {width: auto;}
+}
 
 #blog .newblog {margin-bottom: 20px}
 #blog .newblog a	{display: block; border: solid 1px #dddddd; color: #000000; text-decoration: none}
