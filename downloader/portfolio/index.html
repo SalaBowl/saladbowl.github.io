@@ -4,9 +4,8 @@
   <meta name="viewport" content="width=device-width" />
   <title>さらだぼぉるの公式サイト</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Megrim&family=Noto+Sans+JP:wght@100;300;400;500;700;900&&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163146016-1"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163146016-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -18,7 +17,12 @@
   <body>
     <style media="screen">
       * {margin: 0; padding: 0;}
-      header {width: 100%; background-color: #76C4D1; text-align:center;}
+      h1, h2, h3, p, a {font-family: 'Noto Sans JP', sans-serif;}
+      header {width: 100%; height: 300px; background-color: #76C4D1; display: flex; justify-content: center; align-items: center;;}
+      header h1 {font-weight: 400; margin: auto;}
+      header #nomal {color: #ffffff; font-size: 1.7em;}
+      header #yellow {color: #F6E358; font-size: 1.8em;}
+      header #green {color: #A4F76B; font-size: 1.8em;}
       img {width: 100%; max-width: 700px; background-color: #76C4D1; text-align: center;}
       main {display: flex; width: calc(100% - 25px); margin: 10px;}
       #about {width: 70%; margin-right: 5px;}
@@ -27,7 +31,7 @@
       #sideber {width: 30%;}
       #sideber td {padding: 1px; -moz-text-align-last: justify; text-align-last: justify;}
       #sideber div {margin-bottom: 10px;}
-      #sideber a {width: 100%; margin: 0 auto; padding: 10px; border-radius: 10px; background-color: #e98f93; font-size: 1.3em; color: #fff;}
+      #sideber a {width: 100%; margin: 10px auto; padding: 5px; border-radius: 10px; background-color: #e98f93; font-size: 1.3em; color: #fff;}
       @media (max-width: 950px) {
         main {display: block; width: calc(100% - 25px);}
         #about {argin-right: 0px;}
@@ -41,7 +45,7 @@
       }
     </style>
     <header>
-        <img src="top.png" alt="">
+      <h1><span id="yellow">自己紹介</span><span id="nomal">ページを</span><span id="green">作ろう</span></h1>
     </header>
     <main>
       <section id="about">
@@ -52,10 +56,6 @@
           もし良ければ、サイトのフッターなどにこのページのリンクを貼っていただければ嬉しいです。</p>
         <h2 id="other">その他情報</h2>
         <p>デモサイトは<a href="demo/index.html">こちら</a>からアクセスしてください。</p>
-        <h2 id="slide">スライド</h2>
-        <iframe src="vewslide/index.html"></iframe>
-        <p>クリックで次のページ。左の方にカーソルを持っていくと一覧が出てきます。
-          全画面で見たい方は<a href="vewslide/index.html">こちら</a></p>
       </section>
       <section id="sideber">
         <h2>Download</h2>
@@ -95,7 +95,7 @@
               <td>23KB(22,733byte)</td>
             </tr>
           </table>
-          <a href="downloaddata/sample.zip" download>ダウンロード</a>
+          <a href="downloaddata/face.JPG" download>ダウンロード</a>
         </div>
       </section>
     </main>
