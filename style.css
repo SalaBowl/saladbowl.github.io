@@ -4,201 +4,125 @@
   font-family: 'Megrim', ;
 }
 body {background-color: #fffffb;}
-h1 {font-family: 'Noto Sans JP', sans-serif;}
-p, span {font-family: 'Noto Sans JP', sans-serif; font-weight: 300;}
-h2 {font-family:'Megrim'; text-align: center;}
+h1, h2, h3, p, a, ul, li, label, table {font-family: "Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;}
+p, span {font-weight: 300;}
 
-#head {
-  position: relative;
-  background-color: #fceeeb;
-  width: 200px;
-  height: 100vh;
-  text-align: center;
-  animation-name: headmove;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
+header {
   position: fixed;
+  height: 100vh;
+  width: 15%;
+  background: seashell;
 }
-#head a {
-	font-family: 'Megrim', cursive;
+header #myname {
+  position: absolute; top: 30%; text-align: center;
+  width: 100%; font-size: 1.3rem;
+}
+header #menu {
+  position: absolute; bottom: 10px; text-align: center; width: 100%;
+}
+header #menu li {
+  padding: 2px;
+}
+header a {
+  color: #363636;
   text-decoration: none;
-  color: #7a7c7d;
 }
-#head .myname {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  -webkit-transform : translateX(-50%);
-  transform : translateX(-50%);
-	font-size: 2em;
-  animation-name: sitetitle;
-  animation-duration: 5s;
-}
-#head #menu{
-}
-#head ul {
-  font-size: 1.2em;
-  list-style: none;
-  position: absolute;
-  bottom: 30px;
-  animation-name: liopacity;
-  animation-duration: 5s;
-}
-#head li {
-  text-align: center;
-  margin: 5px 50px;
-  width: 100px;
+header #menu a:hover {
+  border-bottom: 1px solid #d87093;
 }
 
-@keyframes headmove{
-  0% {width: 100%; height: 100vh;}
-  20% {width: 100%; height: 100vh;}
-  100% {width: 200px; height: 100vh;}
-}
-@keyframes sitetitle {
-  0% {position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform : translate(-50%,-50%);
-      transform : translate(-50%,-50%);
-    }
-  20% {position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform : translate(-50%,-50%);
-      transform : translate(-50%,-50%);
-    }
-  100% {position: absolute;
-        top: 20%;
-        left: 50%;
-        -webkit-transform : translateX(-50%);
-        transform : translateX(-50%);
-    }
-}
-@keyframes liopacity {
-  0% {opacity: 0; display: none;}
-  80% {opacity: 0; display: none;}
-  100% {opacity: 1;}
+main {
+  width: calc(80% - 10px); margin-left: 15%;
+  padding: 5px;
 }
 
-@keyframes scroll {
-  0% {overflow: hidden;}
-  100% {overflow: scroll;}
+table {
+  width: 100%;
 }
-
-.block, #footer {width: auto; margin-left: 200px; padding: 10px;}
-
-#head li:hover {border-bottom: solid 2px #e98f93;}
-#about .sns {font-size: 1.5em; }
-#about .myimg {text-align: center;}
-#about img {width: 100px; height: auto;}
-
-.sns {display: flex; display: -webkit-flex; flex-wrap: wrap;}
-.snsbutton {border-radius: 6px; height: 2em; width: 45%; padding-left: 5px; margin: 2px;}
-.snsbutton a {text-decoration: none; color: #fff; font-size: 1.5em; font-weight: 400;}
-.twitter {background: #1da1f2;}
-.youtube {background: #FF0000;}
-.mirrativ {background: linear-gradient(45deg, #29CCB1, #15BDCC); }
-.hp {background: #c8e5e8;}
-@media screen and (max-width:768px) {
- .sns {display: block;}
- .snsbutton {width: auto;}
+table th {
+  padding: 5px;
+  vertical-align: top;
+  color: #000;
 }
+table td {
+  padding: 5px;
+  vertical-align: top;
+}
+table tr:nth-child(odd) {
+  background: #efefef;
+}
+.work {
+  width: calc(50% - 15px); height: 200px; margin: 6px;
+  position: relative; display: inline-block;
+}
+.work a {display: block; color: #fff;}
+.work img {
+  width: 100%; height: 200px; margin: 0; padding: 0;
+  object-fit: cover;
+}
+.sitedata {
+  position: absolute; bottom: 0; left: 0;
+  color: #fff; width: calc(100% - 4px); padding: 3px 2px;
+  background: rgba(0,0,0,0.6);
+  display: block;
+  transition: all 1s 0s ease;
+}
+.siteabout {
+  transition: all 1s 0s ease;
+  overflow: hidden;
+  opacity: 0; height: 0px; width: calc(100% -10px);
+}
+.work:hover .siteabout {
+  color: #fff; width: calc(100% -10px);
+  height: 110px; padding: 5px;
+  opacity: 1;
+}
+input[type=text] ,
+input[type=email] ,
+textarea {
+    border-radius: 4px;
+    border: 1px solid #999;
+    background-color: #fff;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+textarea {
+  height: 100px;
+}
+button {border: 0; width: 100px; margin: 5px auto; height: 30px; border-radius: 10px; background-color: #efefef; display: block;}
 
-#blog .newblog {margin-bottom: 20px}
-#blog .newblog a	{display: block; border: solid 1px #dddddd; color: #000000; text-decoration: none}
-#blog .newblog a:hover	{box-shadow: 0 0 10px #dddddd}
-#blog .newblog img	{width: 100%; height: auto; border: none; margin-bottom: 15px; vertical-align: bottom}
-#blog .newblog h1	{margin-top: 0; margin-bottom: 5px; margin-left: 15px; margin-right: 15px; font-size: 22px}
-#blog .newblog p	{margin-top: 0; margin-bottom: 15px; margin-left: 15px; margin-right: 15px; font-size: 14px}
-
-#blog .newblog .more	{display: inline-block; padding: 5px 15px; background-color: #3077be; color: #ffffff}
-#blog .newblog  .more i	{margin-left: 10px}
-
-#contact form {padding: 0 10px; text-align: center;}
-#contact form label {font-family: 'Megrim';}
-#contact input {height: 30px; width: 600px; border-radius: 10px; background-color: #fffffb;}
-#contact textarea {height: 100px; width: 600px; border-radius: 10px; background-color: #fffffb;}
-#contact .formmes {font-weight: 300; font-size: 0.5; color: #626262;}
-
-#footer {background-color: #eeeeea;}
-#footer ul {text-align: center;}
-#footer .snsIcoTwi::before {content:""; display:inline-block; width:2em; height:2em;
+.snsIcoTwi::before {content:""; display:inline-block; width:2em; height:2em;
   background:url(ico/Twitter.PNG) no-repeat; background-size:contain;}
-#footer .snsIcoYou::before {content:""; display:inline-block; width:2em; height:2em;
+.snsIcoYou::before {content:""; display:inline-block; width:2em; height:2em;
   background:url(ico/Youtube.png) no-repeat; background-size:contain;}
-#footer .snsIcoMir::before {content:""; display:inline-block; width:2em; height:2em;
+.snsIcoMir::before {content:""; display:inline-block; width:2em; height:2em;
   background:url(ico/Mirrativ.PNG) no-repeat; background-size:contain;}
-
-
-@media screen and (max-width:480px) {
-  .space {height: 3em; width: auto; background-color: #ffffff;}
-  #head {
-    top: 0;
-    text-align: center;
-    animation-name: sheadmove;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+@media screen and (max-width:580px) {
+  header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background: #fff5ee;
+    z-index: 99;
   }
-  #head .myname {
-  	font-size: 1.9em;
-    animation-name: ssitetitle;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    padding-left: 20px;
+  header #myname {
+    width: 100%;
+    position: absolute; top: 7px;
   }
-  #head ul {display: none;}
-  @keyframes sheadmove{
-    0% {width: 100vw; height: 100vh;}
-    20% {width: 100vw; height: 100vh;}
-    100% {width: 100vw; height: 3em;}
+  header #menu {
+    position: absolute; bottom: 2px;
   }
-  @keyframes ssitetitle {
-    0% {position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform : translate(-50%,-50%);
-        transform : translate(-50%,-50%);
-      }
-    20% {position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform : translate(-50%,-50%);
-        transform : translate(-50%,-50%);
-      }
-    100% {position: absolute;
-          top: 20%;
-          left: 10%;
-          -webkit-transform : translateX(-20%);
-          transform : translateX(-20%);
-      }
+  header #menu li {
+    height: 20px;
+    display: inline-block; width: 30%;}
+  h2 {padding-top: 60px;}
+}
+@media screen and (max-width:700px) {
+  main {
+    width: 90vw; margin: 0 auto; display: block;
   }
-  .block {width: auto; margin: 10px;}
-  #footer {margin-left: 0;}
-}
-
-@media (max-width: 850px) {
-  #sns .snsicon {display: inline;}
-  #sns .snsbutton {width: auto;}
-  #contact input {height: 30px; width: 100%; border-radius: 10px; background-color: #fffffb;}
-  #contact textarea {height: 100px; width: 100%; border-radius: 10px; background-color: #fffffb;}
-}
-
-@media (min-width: 500px) {
-  #top {display: none;}
-}
-
-@media (min-width: 850px) {
-  #top {display: none;}
-  #bloglist {display: flex;}
-  #bloglist .newblog {width: 49%; margin: auto;}
-}
-
-@media (min-width: 1300px) {
-.space {height: 100vh; width: 200px; background-color: #fff; float: left;}
-#header, #about, #sns,#blog, #contact, #footer{width: 1065px;
-	margin-left: auto;
-	margin-right: auto;}
+  .work {
+    width: calc(100% - 6px); height: 200px; margin: 6px;
+    position: relative; display: inline-block;
+  }
 }

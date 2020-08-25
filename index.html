@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width" />
   <title>さらだぼぉるの公式サイト</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Megrim&family=Noto+Sans+JP:wght@100;300;400;500;700;900&&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163146016-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,119 +15,82 @@
     gtag('config', 'UA-163146016-1');
   </script>
 </head>
-<body>
-  <div class="space"></div>
-  <section id="head">
-    <a href="#top" class="myname">Salad Bowl</a>
+<body ontouchstart="">
+  <header>
+    <a href="/" id="myname">SaladBowl</a>
     <div id="menu">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#sns">SNS</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#works">Works</a></li>
+        <li><a href="/#contact">contact</a></li>
       </ul>
     </div>
-  </section>
-  <section id="top" class="block">
-    <h1>さらだぼぉるの公式サイト</h1>
-  </section>
-  <section id="about" class="block">
-    <h2>About</h2>
-    <div class="myimg">
-      <img src="img/myphoto.png" alt="顔写真" class="myphoto">
-    </div>
-    <p>鉄道と機械全般が好きな高校生。</p>
-    <p>現在できるものはHTML CSS JavaScript。少しだけUnityやXcodeの経験もある。勉強中のものはC#。</p>
-  </section>
-  <section id="sns" class="block">
-    <h2>SNS</h2>
-    <div class="snsicon">
-      <div class="snsbutton twitter">
-        <a href="https://twitter.com/saladbowl_">
-          <span class="username">さらくん 　</span>
-          <span class="other">@Saladbowl_</span>
-        </a>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <h3>さらだぼぉるについて</h3>
+      <p>プログラミングが趣味の変な人。ちょっとしたwebサービスとかを細々と作ったりしている。完成させることに熱中するあまり多くのサービスを作ることのできないのが悩み。</p>
+      <h3>できる言語フレームワーク</h3>
+      <table>
+        <tr>
+          <th>できるよ</th>
+          <td>HTML CSS</td>
+        </tr>
+        <tr>
+          <th>ちょっとできる</th>
+          <td>JavaScript PHP HUGO</td>
+        </tr>
+        <tr>
+          <th>かじったことある</th>
+          <td>Python node.js vue.js</td>
+        </tr>
+      </table>
+      <h3>制作依頼について</h3>
+      <p>基本的に無料です。中の人が忙しくなければ受け付けていますので、お気軽にお問い合わせください。</p>
+      <h3>sns</h3>
+      <p>基本的にTwitterに生存してます</p>
+      <a href="https://twitter.com/saladbowl_sub" class="snsIcoTwi"></a>
+      <a href="https://www.youtube.com/channel/UCtqEHNBdT4JHNAk1n47ObIg" class="snsIcoYou"></a>
+      <a href="https://www.mirrativ.com/user/9977508" class="snsIcoMir"></a>
+    </section>
+    <section id="works" ontouchstart="">
+      <h2>Works</h2>
+      <p>今までのサイト製作実績など</p>
+      <div class="work">
+        <img src="./works/alistotres.jpg" alt="">
+        <div class="sitedata">
+          <p class="sitetitle">Alistotres告知ページ</p>
+          <p class="siteabout">alistotresの告知ページのコーディング デザインをしました。(現在削除済みのため画像はイメージです)</p>
+        </div>
       </div>
-
-      <div class="snsbutton youtube">
-        <a href="https://www.youtube.com/channel/UCtqEHNBdT4JHNAk1n47ObIg">
-          <span class="username">Sara kun</span>
-          <span class="other">特筆すべき点はなし</span>
-        </a>
+      <div class="work">
+        <img src="./works/reset-css.png" alt="">
+        <div class="sitedata">
+          <p class="sitetitle">modern-css-reset-plus-tool</p>
+          <p class="siteabout">modern-css-reset-plus-toolのリセット項目 簡単css機能についての実装を一部担当しました。
+          <a href="https://github.com/SenraiJP/modern-css-reset-plus-tool">リンク</a></p>
+        </div>
       </div>
-
-      <div class="snsbutton mirrativ">
-        <a href="https://www.mirrativ.com/user/9977508">
-          <span class="username">さらだぼぉる</span>
-          <span class="other">ID:9977508</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="blog" class="block">
-    <h2>BLOG</h2>
-    <div id="bloglist">
-      <div class="newblog">
-        <a href="blog/2020/0409.html">
-      		<img src="blog/2020/img/0409top.png" alt="">
-      		<h1>このサイトを作るにあたって考えた事</h1>
-      		<p>皆さん始めまして。さらだぼぉるです。ぼちぼち今回からブログを始めてみようかなと思っています。よろしく…</p>
-      		<p class="more">続きを読む<i class="fa fa-chevron-right"></i></p>
-      	</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="block">
+    </section>
+    <section id="contact">
     <h2>CONTACT</h2>
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyNg8Q6OP6pRv4M22U68XSr92xsS94BTvb6k6qsIaB-FH9sw/formResponse">
-      <label for="email">Name</label><br>
-        <input id="email" type="text" name="entry.1156852906" placeholder="紗羅・ダ・ぼぉる"><br>
-      <label for="email">Mail</label><br>
-        <input id="email" type="text" name="entry.1816671181" placeholder="example@mail.co.jp"><br>
-      <label for="email">Twitter</label><br>
-        <input id="email" type="text" name="entry.1098192910" placeholder="@Saladbowl_"><br>
-      <label for="msg">Contact</label><br>
-        <textarea id="msg" name="entry.1891410470" placeholder="お気軽にお問い合わせください。"></textarea><br>
-      <p class="formmes">送信するとGoogleフォームが開きます</p>
-      <button type="submit" name="button" value="送信">送信</button>
-    </form>
     <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+      <p>
+        <label>お名前
+          <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>返信用メール
+          <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>お問い合わせ内容
+          <textarea name="message"></textarea></label>
+      </p>
+      <button type="submit">Send</button>
+    </form>
   </section>
-
-  <section id="footer">
-  </section>
-<script type="text/javascript">
-(function(){
-	var footerload = new XMLHttpRequest();
-	footerload.open("get", "blog/footer.html");
-	footerload.send();
-	footerload.addEventListener("load", function(){
-		var html = document.getElementById("footer");
-
-		if(html) html.innerHTML = this.response;
-	}, false);
-})();
-</script>
+  </main>
 </body>
 </html>
