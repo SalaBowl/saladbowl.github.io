@@ -1,153 +1,88 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Megrim', ;
-}
-body {background-color: #fffffb;}
-h1, h2, h3, p, a, ul, li, label, table {font-family: "Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;}
-p, span {font-weight: 300;}
-
-header {
-  position: fixed;
-  height: 100vh;
-  width: 15%;
-  background: seashell;
-}
-header #myname {
-  position: absolute; top: 30%; text-align: center;
-  width: 100%; font-size: 1.3rem;
-}
-header #menu {
-  position: absolute; bottom: 10px; text-align: center; width: 100%;
-}
-header #menu li {
-  padding: 2px;
-}
-header a {
-  color: #363636;
-  text-decoration: none;
-}
-header #menu a:hover {
-  border-bottom: 1px solid #d87093;
+html, body, header, main, footer, section, div,
+h1, h2, h3, p, a, ul, li {margin: 0; padding: 0;}
+input,button,textarea {-webkit-appearance: none; -moz-appearance: none; appearance: none; font-family: inherit; border-radius: 0; box-sizing: border-box; color: inherit;
+    font-size: 16px;
+    transform: scale(0.8);
 }
 
-main {
-  width: calc(80% - 10px); margin-left: 17.5%;
-  padding: 5px;
+html,
+body{width: 100%; height: 100%;}
+
+body {background-color: #fafafa; color: #202011;}
+
+header {display: flex; width: calc(100% - 20px); padding: 5px 10px; height: 60px; line-height: 60px;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
+    border-radius: 0 0 10px 10px;
+}
+header #headerTitle {width: 70%;}
+header #headerlink {width: calc(30% - 10px); text-align: right; padding-right: 10px;}
+header #headerlink a {color: #202011; font-size: 1.07rem;}
+
+header h1 {font-style: italic; font-weight: 500;}
+
+main ul {list-style: none;}
+main ul li ul {margin-left: 10px;}
+main ul li::before,
+main ul li ul li::before {content: "-"; margin-right: 6px;}
+
+main section {margin: 50px auto; width: 100%; max-width: 1000px;}
+main section.content {min-height: 25vh;}
+
+main .sectionTitle {text-align: center;}
+main .sectionTitle h2 {font-size: 1.6rem; line-height: 1.7rem; font-weight: 600;}
+main .sectionTitle p {font-size: 1.3rem; line-height: 1.4rem; font-weight: 500;}
+main section div.textWrap p {font-size: 1.05rem; line-height: 1.4rem; font-weight: 400; letter-spacing: 0.02rem;}
+main .textWrap { margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+}
+main section#service div.textWrap,
+main section#works div.textWrap {display: flex; flex-wrap: wrap;}
+main section#works div.WorksWrap img {width: 100%; max-width: 300px;}
+main section#works div.WorksWrap h3,
+main section#service div.ServiceWrap h3 {font-size: 1.1rem; line-height: 1.2rem;}
+main section#works div.WorksWrap p,
+main section#service div.ServiceWrap p {font-size: 1rem; line-height: 1.1rem;}
+main section#works div.WorksWrap a,
+main section#service div.ServiceWrap a {color: #202011; width: 100%; display: block; text-align: right;}
+main section#service div.ServiceWrap p.sys::before {content: "構成 : ";}
+main section#service div.ServiceWrap p.tec::before {content: "技術 : ";}
+
+main section#works div.WorksWrap,
+main section#service div.ServiceWrap {box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12); border-radius: 10px; padding: 8px;}
+main section#service div.ServiceWrap {margin: 10px 15px; width: calc(100% - 30px); display: flex;}
+main section#service div.ServiceWrap img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+main section#service div.ServiceWrap .serviceComment{
+    margin-left: 10px;
+    width: calc(100% - 10px);
 }
 
-table {
-  width: 100%;
-}
-table th {
-  padding: 5px;
-  vertical-align: top;
-  color: #000;
-}
-table td {
-  padding: 5px;
-  vertical-align: top;
-}
-table tr:nth-child(odd) {
-  background: #efefef;
-}
-.work_wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-.work_wrap .sp_on {
-  display: none;
-}
-.work {
-  width: calc(50% - 15px); height: 200px; margin: 6px;
-  position: relative; display: inline-block;
-}
-.work a {display: block; color: #fff;}
-.work img {
-  width: 100%; height: 200px; margin: 0; padding: 0;
-  object-fit: cover;
-}
-.sitedata {
-  position: absolute; bottom: 0; left: 0;
-  color: #fff; width: calc(100% - 4px); padding: 3px 2px;
-  background: rgba(0,0,0,0.6);
-  display: block;
-  transition: all 1s 0s ease;
-}
-.siteabout {
-  transition: all 1s 0s ease;
-  overflow: hidden;
-  opacity: 0; height: 0px; width: calc(100% -10px);
-}
-.work:hover .siteabout {
-  color: #fff; width: calc(100% -10px);
-  height: 130px; padding: 5px;
-  opacity: 1;
-}
 
-.service_wrap {width: 100%; margin-bottom: 10px; background-color: #fafafa;}
-.service_wrap img {width: 100%; height: 200px; object-fit: cover;}
-.service_wrap .about {padding: 5px 10px;}
-
-input[type=text] ,
-input[type=email] ,
-textarea {
-    border-radius: 4px;
-    border: 1px solid #999;
-    background-color: #fff;
-    padding: 10px;
-    width: calc(100% - 20px);
+form[name="contact"] p {margin: 5px 0 1px 9%;}
+form[name="contact"] input,
+form[name="contact"] textarea {
+    width: calc(100% - 4px);
+    padding: 2px;
+    font-size: 1.2rem;
+    border: solid 1.5px #afafaf;
+    border-radius: 2px;
 }
-textarea {
-  height: 100px;
-}
-button {border: 0; width: 100px; margin: 5px auto; height: 30px; border-radius: 10px; background-color: #efefef; display: block;}
+form[name="contact"] textarea {resize: vertical; height: 100px;}
+form[name="contact"] button {width: 100px; border: solid 1px #121212; background-color: transparent; display: block; margin: 0 auto; padding: 5px 15px; border-radius: 10px; font-size: 1.1rem;}
 
-.snsIcoTwi::before {content:""; display:inline-block; width:2em; height:2em;
-  background:url(ico/Twitter.PNG) no-repeat; background-size:contain;}
-.snsIcoYou::before {content:""; display:inline-block; width:2em; height:2em;
-  background:url(ico/Youtube.png) no-repeat; background-size:contain;}
-.snsIcoMir::before {content:""; display:inline-block; width:2em; height:2em;
-  background:url(ico/Mirrativ.PNG) no-repeat; background-size:contain;}
+@media screen and (min-width:701px) {
+    main section#works div.WorksWrap {margin: 10px 15px; width: calc(33% - 44px);}
+}
 @media screen and (max-width:700px) {
-  header {
-    position: fixed;
-    height: 60px;
-    width: 100%;
-    background: #fff5ee;
-    z-index: 99;
-  }
-  header #myname {
-    width: 100%;
-    position: absolute; top: 7px;
-  }
-  header #menu {
-    position: absolute; bottom: 2px;
-  }
-  header #menu li {
-    height: 20px;
-    display: inline-block; width: 17%;}
-  h2 {padding-top: 60px;}
-  main {
-    width: 90vw; margin: 0 auto; display: block;
-  }
-  #works {position: relative;}
-  #works .sp_on {
-    display: block;
-    position: absolute; bottom: 10px; right: 10px;
-  }
-  .work_wrap {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 40px;
-  }
-  .work {
-    flex: 0 0 80px;
-    min-width: 300px;
-    width: calc(100% - 6px); height: 200px; margin: 6px;
-    position: relative; display: inline-block;
-  }
+    main section#works div.WorksWrap {margin: 10px 15px; width: calc(50% - 46px);}
+}
+@media screen and (max-width:500px) {
+    main section#works div.WorksWrap {margin: 10px 0px; width: 100%;}
+    main section#works div.WorksWrap img,
+    main section#service div.ServiceWrap img {margin: 10px auto; display: block;}
+    main section#service div.ServiceWrap {display: block; width: 100%; margin: 8px 0;}
 }
